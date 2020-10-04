@@ -98,9 +98,16 @@ namespace excelgenerate
             int lastColoumnID = xlSheet.UsedRange.Columns.Count;
 
 
-            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, lastRowID));
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, lastColoumnID));
 
             Excel.Range TableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, lastColoumnID));
+
+            Excel.Range FirstOszlop = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, 1));
+            FirstOszlop.Font.Bold = true;
+            FirstOszlop.Interior.Color = Color.LightYellow;
+
+            Excel.Range LastOszlop= xlSheet.get_Range(GetCell(1, lastColoumnID), GetCell(lastRowID, lastColoumnID));
+            LastOszlop.Interior.Color = Color.LightGreen;
 
             headerRange.Font.Bold = true;
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
