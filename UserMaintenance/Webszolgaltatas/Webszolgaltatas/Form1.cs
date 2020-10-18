@@ -13,6 +13,7 @@ namespace Webszolgaltatas
 {
     public partial class Form1 : Form
     {
+        BindingList<Entities.RateData> Rates;
         public Form1()
         {
             InitializeComponent();
